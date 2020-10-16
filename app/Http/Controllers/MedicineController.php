@@ -14,7 +14,7 @@ class MedicineController extends Controller
 
     public function index()
     {
-        $medicines = Medicine::where('active', 1)->get();
+        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('medicines.index', compact('medicines'));
     }
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nurse;
+use App\DataTables\NurseDataTable;
+
 use Illuminate\Http\Request;
+
 
 class NurseController extends Controller
 {
@@ -12,10 +15,9 @@ class NurseController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(NurseDataTable $dataTable)
     {
-        $nurses = Nurse::where('active', 1)->get();
-        return view('nurses.index', compact('nurses'));
+        return $dataTable->render('nurses.index');
     }
 
     public function create(Request $request) {

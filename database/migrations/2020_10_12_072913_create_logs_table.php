@@ -15,6 +15,7 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+            $table->string('ref_code', 11)->unique();
             $table->timestamps();
         });
     }

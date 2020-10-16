@@ -19,43 +19,43 @@ Tip 2: you can also add an image using data-image tag
             </li>
 
             <li class="nav-item @if($activePage == 'schedule') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'table')}}">
+                <a class="nav-link" href="{{route('schedule')}}">
                     <i class="nc-icon nc-watch-time"></i>
                     <p>{{ __("Schedule") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'dispenser') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'typography')}}">
+            <li class="nav-item @if($activePage == 'dispensers') active @endif">
+                <a class="nav-link" href="{{route('dispensers')}}">
                     <i class="nc-icon nc-settings-gear-64"></i>
                     <p>{{ __("Dispensers") }}</p>
                 </a>
             </li>
             <li class="nav-item @if($activePage == 'records') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'notifications')}}">
+                <a class="nav-link" href="{{route('records')}}">
                     <i class="nc-icon nc-paper-2"></i>
                     <p>{{ __("Records") }}</p>
                 </a>
             </li>
             <li class="nav-item @if($activePage == 'assignments') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'icons')}}">
+                <a class="nav-link" href="{{route('assignments')}}">
                     <i class="nc-icon nc-bell-55"></i>
                     <p>{{ __("Assignments") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'nurse') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'maps')}}">
+            <li class="nav-item @if($activePage == 'nurses') active @endif">
+                <a class="nav-link" href="{{route('nurses')}}">
                     <i class="nc-icon nc-single-02"></i>
                     <p>{{ __("Nurses") }}</p>
                 </a>
             </li>
             <li class="nav-item @if($activePage == 'patient') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'notifications')}}">
+                <a class="nav-link" href="{{route('patients')}}">
                     <i class="nc-icon nc-single-02"></i>
                     <p>{{ __("Patients") }}</p>
                 </a>
             </li>
             <li class="nav-item @if($activePage == 'medicine') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'notifications')}}">
+                <a class="nav-link" href="{{route('medicines')}}">
                     <i class="nc-icon nc-ambulance"></i>
                     <p>{{ __("Medicines") }}</p>
                 </a>

@@ -14,7 +14,7 @@ class DispenserController extends Controller
 
     public function index()
     {
-        return view('dispenser.index');
+        return view('dispensers.index');
     }
 
     public function create(Request $request) {

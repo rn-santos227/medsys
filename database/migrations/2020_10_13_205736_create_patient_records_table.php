@@ -19,6 +19,7 @@ class CreatePatientRecordsTable extends Migration
             $table->text('prescription');
             $table->text('condition');
             $table->text('notes')->nullable();
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }

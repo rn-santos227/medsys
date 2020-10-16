@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class TaskAssignment extends Model
 {
     use HasFactory;
+    protected $table = 'task_assignments';
 }

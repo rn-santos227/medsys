@@ -14,7 +14,7 @@ class PatientRecordController extends Controller
 
     public function index()
     {
-        $records = PatientRecord::where('active', 1)->get();
+        $records = PatientRecord::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('records.index', compact('records'));
     }
 

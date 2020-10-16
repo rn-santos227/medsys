@@ -15,7 +15,7 @@
                                     <h3 class="card-title">Nurses</h3>
                                 </div>
                                 <div class="col-md-1">
-                                    <h3 class="card-title">0</h3>
+                                <h3 class="card-title">{{ $nurse_count }}</h3>
                                 </div>
                             </div>                    
                         </div>
@@ -34,7 +34,7 @@
                                     <h3 class="card-title">Patients</h3>
                                 </div>
                                 <div class="col-md-1">
-                                    <h3 class="card-title">0</h3>
+                                    <h3 class="card-title">{{ $patient_count }}</h3>
                                 </div>
                             </div>                    
                         </div>
@@ -53,7 +53,7 @@
                                     <h3 class="card-title">Medicines</h3>
                                 </div>
                                 <div class="col-md-1">
-                                    <h3 class="card-title">0</h3>
+                                    <h3 class="card-title">{{ $medicine_count }}</h3>
                                 </div>
                             </div>                    
                         </div>
@@ -72,7 +72,7 @@
                                     <h3 class="card-title">Schedules</h3>
                                 </div>
                                 <div class="col-md-1">
-                                    <h3 class="card-title">0</h3>
+                                    <h3 class="card-title">{{ $schedule_count }}</h3>
                                 </div>
                             </div>                    
                         </div>
@@ -91,7 +91,7 @@
                                     <h3 class="card-title">Assignments</h3>
                                 </div>
                                 <div class="col-md-1">
-                                    <h3 class="card-title">0</h3>
+                                    <h3 class="card-title">{{ $assignment_count }}</h3>
                                 </div>
                             </div>                    
                         </div>

@@ -14,7 +14,7 @@ class PatientController extends Controller
 
     public function index()
     {
-        $patients = PAtient::where('active', 1)->get();
+        $patients = PAtient::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('patients.index', compact('patients'));
     }
 

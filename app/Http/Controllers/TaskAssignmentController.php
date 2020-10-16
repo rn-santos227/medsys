@@ -14,7 +14,7 @@ class TaskAssignmentController extends Controller
 
     public function index()
     {
-        $assignments = TaskAssignment::where('active', 1)->get();
+        $assignments = TaskAssignment::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('assignments.index', compact('assignments'));
     }
 

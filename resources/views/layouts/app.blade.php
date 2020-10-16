@@ -68,6 +68,7 @@
     <script src="{{ asset('light-bootstrap/js/light-bootstrap-dashboard.js?v=2.0.0') }}" type="text/javascript"></script>
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('light-bootstrap/js/demo.js') }}"></script>
-    @stack('js')
-
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+    @stack('scripts')
 </html>
