@@ -20,6 +20,7 @@ class CreateNursesTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('address');
+            $table->string('email');
             $table->string('contact');
             $table->text("notes")->nullable();
             $table->tinyInteger('active');
