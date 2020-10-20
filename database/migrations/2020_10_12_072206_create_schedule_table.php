@@ -16,6 +16,7 @@ class CreateScheduleTable extends Migration
         Schema::create('schedule', function (Blueprint $table) {
             $table->id();
             $table->string('ref_code', 11)->unique();
+            $table->integer('task_id');
             $table->string('days');
             $table->time('schedule');
             $table->text("notes")->nullable();

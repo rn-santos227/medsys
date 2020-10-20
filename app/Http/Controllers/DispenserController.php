@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dispenser;
+use App\DataTables\DispenserDataTable;
+
 use Illuminate\Http\Request;
 
 class DispenserController extends Controller
@@ -12,9 +14,9 @@ class DispenserController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(DispenserDataTable $dataTable)
     {
-        return view('dispensers.index');
+        return $dataTable->render('dispensers.index');
     }
 
     public function create(Request $request) {

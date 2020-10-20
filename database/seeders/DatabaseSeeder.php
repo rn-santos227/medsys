@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
+use App\Models\Dispenser;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         DB::statement("ALTER TABLE nurses ADD fingerprint MEDIUMBLOB");
         User::factory(1)->create();
+
+        for($i = 0; $i < 12; $i++) {
+            Dispenser::factory(1)->create();
+        }
     }
 }

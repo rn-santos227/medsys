@@ -8,5 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Dispenser extends Model
 {
     use HasFactory;
+    
     protected $table = 'dispensers';
+
+    protected $fillable = [
+        'ref_code',
+        'name',
+        'medicine_id',
+        'capacity',
+        'ceiling',
+        'notes',
+        'active'
+    ];
 }
