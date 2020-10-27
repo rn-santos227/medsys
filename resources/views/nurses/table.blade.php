@@ -11,12 +11,12 @@
                         <th>Actions</th>
                     </thead>
                     <tbody>
-                        @foreach ($patients as $patient)
-                        <tr id="{{ $patient->id }}">
-                            <td>{{ $patient->ref_code }}</td>
-                            <td>{{ $patient->last_name }}, {{ $patient->first_name }} {{ $patient->middle_name }}</td>
-                            <td>{{ $patient->email }}</td>
-                            <td>{{ $patient->contact }}</td>
+                        @foreach ($nurses as $nurse)
+                        <tr id="{{ $nurse->id }}">
+                            <td>{{ $nurse->ref_code }}</td>
+                            <td>{{ $nurse->last_name }}, {{ $nurse->first_name }} {{ $nurse->middle_name }}</td>
+                            <td>{{ $nurse->email }}</td>
+                            <td>{{ $nurse->contact }}</td>
                             <td>
                                 <button type="button" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
                                 <button type="button" class="btn text-white bg-success ml-2"><i class="fa fa-hand-pointer-o"></i></button>

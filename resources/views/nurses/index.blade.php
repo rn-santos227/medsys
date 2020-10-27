@@ -17,15 +17,19 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        {{$dataTable->table()}}
+                        @include('nurses.table')
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+@include('nurses.create')
+@include('nurses.fingerprint')
 @endsection
 
 @push('scripts')
-    {{$dataTable->scripts()}}
+
 @endpush

@@ -69,6 +69,8 @@
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('light-bootstrap/js/demo.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+    <script src="{{ asset('scripts/es6-shim.js') }}" defer></script>
+    <script src="{{ asset('scripts/websdk.client.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('scripts/fingerprint.sdk.min.js') }}" defer></script>
     @stack('scripts')
 </html>

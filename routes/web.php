@@ -34,6 +34,8 @@ Route::get('/records', 'App\Http\Controllers\PatientRecordController@index')->na
 Route::get('/assignments', 'App\Http\Controllers\TaskAssignmentController@index')->name('assignments');
 
 Route::get('/nurses', 'App\Http\Controllers\NurseController@index')->name('nurses');
+Route::post('/nurses/create', 'App\Http\Controllers\NurseController@create')->name('nurses_create');
+
 
 Route::get('/patients', 'App\Http\Controllers\PatientController@index')->name('patients');
 

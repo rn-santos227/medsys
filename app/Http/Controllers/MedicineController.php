@@ -19,7 +19,7 @@ class MedicineController extends Controller
     }
 
     public function create(Request $request) {
-
+        $validated = $request->validated();
     }
 
     public function update(Request $request) {

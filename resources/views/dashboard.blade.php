@@ -119,7 +119,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-2">
-                                            <button type="submit" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
+                                            <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
                                         </div>
                                     </div>           
                                 </div>

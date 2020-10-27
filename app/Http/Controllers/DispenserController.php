@@ -19,12 +19,8 @@ class DispenserController extends Controller
         return $dataTable->render('dispensers.index');
     }
 
-    public function create(Request $request) {
-
-    }
-
     public function update(Request $request) {
-
+        $validated = $request->validated();
     }
 
     public function delete(Request $request) {
