@@ -27,7 +27,7 @@ class Patient extends Model
     }
 
     public function setMiddleNameAttribute($value) {
-        $this->attributes['last_name'] = ucfirst(strtolower($value));
+        $this->attributes['middle_name'] = ucfirst(strtolower($value));
     }
 
     public function setLastNameAttribute($value) {

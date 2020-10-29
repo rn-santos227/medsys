@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Schedule;
+
+use App\Http\Requests\ScheduleRequest;
 use Illuminate\Http\Request;
 
-use App\Models\Schedule;
 class ScheduleController extends Controller
 {
     public function __construct()
@@ -18,7 +20,7 @@ class ScheduleController extends Controller
         return view('schedule.index', compact('schedule'));
     }
 
-    public function create(Request $request) {
+    public function create(ScheduleRequest $request) {
         $validated = $request->validated();
     }
 

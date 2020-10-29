@@ -9,4 +9,11 @@ class TaskAssignment extends Model
 {
     use HasFactory;
     protected $table = 'task_assignments';
+    protected $fillable = [
+        'dispenser_id',
+        'patient_id',
+        'nurse_id',
+        'notes',
+        'active'
+    ];
 }

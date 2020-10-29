@@ -13,8 +13,8 @@ class Medicine extends Model
     protected $fillable = [
         'ref_code',
         'name',
-        'middle_name',
         'generic_name',
+        'brand',
         'measurement',
         'expiration',
         'active'

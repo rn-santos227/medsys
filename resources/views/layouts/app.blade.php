@@ -30,6 +30,7 @@
         <link href="{{ asset('light-bootstrap/css/light-bootstrap-dashboard.css?v=2.0.0') }} " rel="stylesheet" />
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="{{ asset('light-bootstrap/css/demo.css') }}" rel="stylesheet" />
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"/>
     </head>
 
     <body>
@@ -72,5 +73,6 @@
     <script src="{{ asset('scripts/es6-shim.js') }}" defer></script>
     <script src="{{ asset('scripts/websdk.client.bundle.min.js') }}" defer></script>
     <script src="{{ asset('scripts/fingerprint.sdk.min.js') }}" defer></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     @stack('scripts')
 </html>

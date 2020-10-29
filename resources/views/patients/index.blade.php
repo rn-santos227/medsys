@@ -12,7 +12,7 @@
                                 <h4 class="card-title">List of Patients</h4>
                             </div>
                             <div class="col-md-2 pull-right">
-                                <button data-toggle="modal" data-target="#fingerprint" type="button" class="btn btn-success btn-wd">New Record</button>
+                                <button data-toggle="modal" data-target="#create" type="button" class="btn btn-success btn-wd">New Record</button>
                             </div>
                         </div>
                     </div>

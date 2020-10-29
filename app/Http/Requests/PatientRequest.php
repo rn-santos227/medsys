@@ -13,7 +13,7 @@ class PatientRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,11 @@ class PatientRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'contact' => 'required|max:255',
+            'home_address' => 'required|max:255'    
         ];
     }
 }

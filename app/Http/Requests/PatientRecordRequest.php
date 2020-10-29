@@ -13,7 +13,7 @@ class PatientRecordRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,8 @@ class PatientRecordRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'condition' => 'required|max:255',
+            'prescription' => 'required|max:255',
         ];
     }
 }

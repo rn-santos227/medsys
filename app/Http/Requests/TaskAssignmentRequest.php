@@ -13,7 +13,7 @@ class TaskAssignmentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,9 @@ class TaskAssignmentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'dispenser_id' => 'required|integer',
+            'patient_id' => 'required|integer',
+            'nurse_id' => 'required|integer'
         ];
     }
 }

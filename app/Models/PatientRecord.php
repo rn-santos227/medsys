@@ -9,4 +9,11 @@ class PatientRecord extends Model
 {
     use HasFactory;
     protected $table = 'patient_records';
+    protected $fillable = [
+        'patient_id',
+        'prescription',
+        'condition',
+        'notes',
+        'active'
+    ];
 }

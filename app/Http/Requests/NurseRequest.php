@@ -13,7 +13,7 @@ class NurseRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -26,7 +26,7 @@ class NurseRequest extends FormRequest
         return [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required|max:255',
             'contact' => 'required|max:255',
             'address' => 'required|max:255'
         ];

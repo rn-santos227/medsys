@@ -109,25 +109,27 @@
                         </div>
                         <div class="card-body ">
                             @foreach($dispensers as $dispenser)
-                            <div class="card mb-3" style="background-color: #ebebeb;">                     
-                                <div class="card-body">
-                                <h5 class="card-title">ID: {{$dispenser->id}} - {{$dispenser->name}}</h5>
-                                    <div class="row mt-2">
-                                        <div class="col-md-10">
-                                            <div class="progress mt-2">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->capacitiy }}"></div>
+                                @if($dispenser->maintenance == 1)
+                                <div class="card mb-3" style="background-color: #ebebeb;">                     
+                                    <div class="card-body">
+                                    <h5 class="card-title">ID: {{$dispenser->id}} - {{$dispenser->name}}</h5>
+                                        <div class="row mt-2">
+                                            <div class="col-md-10">
+                                                <div class="progress mt-2">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->capacitiy }}"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
-                                        </div>
-                                    </div>           
-                                </div>
-                                <div class="card-footer pt-0">
-                                    <hr>
-                                    <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">{{$dispenser->note}}</div>
-                                </div>
-                            </div> 
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="card-footer pt-0">
+                                        <hr>
+                                        <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">{{$dispenser->note}}</div>
+                                    </div>
+                                </div> 
+                                @endif
                             @endforeach                        
                         </div>
                         <div class="card-footer ">

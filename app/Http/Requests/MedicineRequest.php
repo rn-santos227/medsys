@@ -13,7 +13,7 @@ class MedicineRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,11 @@ class MedicineRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:255',
+            'generic_name' => 'required|max:255',
+            'brand' => 'required|max:255',
+            'measurement' => 'required|max:255',
+            'expiration' => 'required|date'
         ];
     }
 }

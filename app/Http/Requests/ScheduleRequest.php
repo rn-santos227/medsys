@@ -13,7 +13,7 @@ class ScheduleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -24,7 +24,9 @@ class ScheduleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'task_id' => 'required|integer',
+            'days' => 'required|max:255',
+            'schedule' => 'required|date',
         ];
     }
 }
