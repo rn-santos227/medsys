@@ -26,6 +26,10 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('dashboard');
 
 Route::get('/schedule', 'App\Http\Controllers\ScheduleController@index')->name('schedule');
+Route::post('/schedule/create', 'App\Http\Controllers\ScheduleController@create')->name('schedule_create');
+Route::post('/schedule/update', 'App\Http\Controllers\ScheduleController@update')->name('schedule_update');
+Route::post('/schedule/delete', 'App\Http\Controllers\ScheduleController@delete')->name('schedule_delete');
+
 
 Route::get('/dispensers', 'App\Http\Controllers\DispenserController@index')->name('dispensers');
 Route::post('/dispensers/update', 'App\Http\Controllers\DispenserController@update')->name('dispensers_update');
@@ -34,6 +38,9 @@ Route::post('/dispensers/maintenance', 'App\Http\Controllers\DispenserController
 Route::get('/records', 'App\Http\Controllers\PatientRecordController@index')->name('records');
 
 Route::get('/assignments', 'App\Http\Controllers\TaskAssignmentController@index')->name('assignments');
+Route::post('/assignments/create', 'App\Http\Controllers\TaskAssignmentController@create')->name('assignments_create');
+Route::post('/assignments/update', 'App\Http\Controllers\TaskAssignmentController@update')->name('assignments_update');
+Route::post('/assignments/delete', 'App\Http\Controllers\TaskAssignmentController@delete')->name('assignments_delete');
 
 Route::get('/nurses', 'App\Http\Controllers\NurseController@index')->name('nurses');
 Route::post('/nurses/create', 'App\Http\Controllers\NurseController@create')->name('nurses_create');
