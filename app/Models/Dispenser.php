@@ -20,6 +20,7 @@ class Dispenser extends Model
         'capacity',
         'ceiling',
         'critical',
+        'maintenance',
         'notes',
         'active'
     ];

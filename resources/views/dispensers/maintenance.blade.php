@@ -11,10 +11,7 @@
                 </div>
                 <div class="modal-body">
                     @csrf
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" 
-                    name="id" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->id }}">
-                    </div>
+                    <input type="hidden" class="form-control" name="id" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->id }}">
                     <div class="form-group">
                         <label for="toggle_maintenance">Maintenance Mode: </label>
                         <input name="maintenance" {{ $dispenser->maintenance == 0 ? 'checked' : '' }} type="checkbox" id="toggle_maintenance" data-toggle="toggle">

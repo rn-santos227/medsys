@@ -116,7 +116,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-10">
                                                 <div class="progress mt-2">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->capacitiy }}"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="card-footer pt-0">
                                         <hr>
-                                        <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">{{$dispenser->note}}</div>
+                                        <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">{{$dispenser->notes}}</div>
                                     </div>
                                 </div> 
                                 @endif

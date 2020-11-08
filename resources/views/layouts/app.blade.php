@@ -31,6 +31,8 @@
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="{{ asset('light-bootstrap/css/demo.css') }}" rel="stylesheet" />
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+
     </head>
 
     <body>
@@ -70,9 +72,12 @@
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('light-bootstrap/js/demo.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ asset('scripts/es6-shim.js') }}" defer></script>
-    <script src="{{ asset('scripts/websdk.client.bundle.min.js') }}" defer></script>
-    <script src="{{ asset('scripts/fingerprint.sdk.min.js') }}" defer></script>
+    <script src="{{ asset('scripts/es6-shim.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('scripts/websdk.client.bundle.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('scripts/fingerprint.sdk.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('scripts/fingerprint.sdk.min.js.map') }}" ></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
     @stack('scripts')
 </html>

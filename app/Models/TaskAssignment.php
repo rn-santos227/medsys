@@ -29,11 +29,16 @@ class TaskAssignment extends Model
 
     public function getPatientName() {
         $patient = Patient::where('id', $this->patient_id)->first();
-        return $patient->last_name.','.$patient->first_name.' '.$patient->middle_name;
+        return $patient->last_name.', '.$patient->first_name.' '.$patient->middle_name;
     }
 
     public function getNurseName() {
         $nurse = Nurse::where('id', $this->nurse_id)->first();
-        return $nurse->last_name.','.$nurse->first_name.' '.$nurse->middle_name;
+        return $nurse->last_name.', '.$nurse->first_name.' '.$nurse->middle_name;
+    }
+
+    public function getNurseContact() {
+        $nurse = Nurse::where('id', $this->nurse_id)->first();
+        return $nurse->contact;
     }
 }

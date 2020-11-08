@@ -16,8 +16,8 @@ class ScheduleController extends Controller
 
     public function index()
     {
-        $schedule = Schedule::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        return view('schedule.index', compact('schedule'));
+        $schedules = Schedule::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('schedule.index', compact('schedules'));
     }
 
     public function create(ScheduleRequest $request) {
