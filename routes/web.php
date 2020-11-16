@@ -34,6 +34,8 @@ Route::post('/schedule/delete', 'App\Http\Controllers\ScheduleController@delete'
 Route::get('/dispensers', 'App\Http\Controllers\DispenserController@index')->name('dispensers');
 Route::post('/dispensers/update', 'App\Http\Controllers\DispenserController@update')->name('dispensers_update');
 Route::post('/dispensers/maintenance', 'App\Http\Controllers\DispenserController@maintenance')->name('dispensers_maintenance');
+Route::post('/dispensers/relay', 'App\Http\Controllers\DispenserController@relay')->name('dispenser_relay');
+
 
 Route::get('/records', 'App\Http\Controllers\PatientRecordController@index')->name('records');
 

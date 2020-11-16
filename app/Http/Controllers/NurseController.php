@@ -49,6 +49,10 @@ class NurseController extends Controller
         ));
     }
 
+    public function biometric(Request $request) {
+        
+    }
+
     public function update(Request $request) {
 
     }

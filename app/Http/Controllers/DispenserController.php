@@ -50,4 +50,12 @@ class DispenserController extends Controller
         $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('dispensers.index', compact('dispensers', 'medicines'));
     }
+
+    public function relay(Request $request) {
+        $id = $request->id;
+
+        return response()->json([
+            'status' => 'okay',
+        ]);
+    }
 }

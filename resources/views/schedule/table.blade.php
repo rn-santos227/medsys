@@ -14,7 +14,11 @@
                     <tbody>
                         @foreach ($schedules as $schedule)
                         <tr id="{{ $schedule->id }}">
-
+                            <td>{{ $schedule->ref_code }}</td>
+                            <td>{{ $schedule->getTask()->ref_code }}</td>
+                            <td>{{ $schedule->getTask()->getNurseName() }}</td>
+                            <td>{{ $schedule->getTask()->getPatientName() }}</td>
+                            <td>{{ $schedule->getSchedule() }}</td>
                             <td>
                                 <button type="button" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
                                 <button type="button" class="btn text-white bg-success ml-2"><i class="fa fa-hand-pointer-o"></i></button>

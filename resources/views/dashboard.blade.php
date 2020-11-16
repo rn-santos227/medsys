@@ -114,13 +114,14 @@
                                     <div class="card-body">
                                     <h5 class="card-title">ID: {{$dispenser->id}} - {{$dispenser->name}}</h5>
                                         <div class="row mt-2">
-                                            <div class="col-md-10">
+                                            <div class="col-md-9">
                                                 <div class="progress mt-2">
                                                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
+                                                <button type="button" id="{{ $dispenser->id }}" class="btn text-white bg-primary relay"><i class="fa fa-bell"></i></button>                                            
                                             </div>
                                         </div>           
                                     </div>
@@ -139,6 +140,12 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $('.relay').on('click', function(e) {
+            e.preventDefault();
+            var id = this.id;
+        });
+    </script>
 @endsection
 
 @push('js')
@@ -148,7 +155,6 @@
             demo.initDashboardPageCharts();
 
             demo.showNotification();
-
         });
     </script>
 @endpush

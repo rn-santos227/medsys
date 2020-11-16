@@ -23,7 +23,7 @@ class PatientController extends Controller
     public function create(PatientRequest $request) {
         $validated = $request->validated();
         $id = Patient::count() + 1;
-        $patients = Patient::firstOrCreate([
+        $patient = Patient::firstOrCreate([
             'first_name' => $request->first_name, 
             'last_name' => $request->last_name,
         ],[
@@ -46,7 +46,23 @@ class PatientController extends Controller
     }
 
     public function update(Request $request) {
+        $validated = $request->validated();
+        $patient = Patient::findOrFail($request->id);
 
+        $patient->update([
+            'first_name' => $request->first_name, 
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'home_address' => $request->home_address,
+            'notes' => $request->notes,
+            'priority' => $request->priority,
+            'active' => $request->active
+        ]);
+
+        $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('patients.index', compact('patients'));
     }
 
     public function delete(Request $request) {
