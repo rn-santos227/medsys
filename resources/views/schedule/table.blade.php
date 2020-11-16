@@ -5,18 +5,16 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <th>Ref. Code</th>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Contact</th>
+                        <th>Task ID</th>
+                        <th>Assigned Nurse</th>
+                        <th>Patient</th>
+                        <th>Schedule</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
-                        @foreach ($patients as $patient)
-                        <tr id="{{ $patient->id }}">
-                            <td>{{ $patient->ref_code }}</td>
-                            <td>{{ $patient->last_name }}, {{ $patient->first_name }} {{ $patient->middle_name }}</td>
-                            <td>{{ $patient->email }}</td>
-                            <td>{{ $patient->contact }}</td>
+                        @foreach ($schedules as $schedule)
+                        <tr id="{{ $schedule->id }}">
+
                             <td>
                                 <button type="button" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
                                 <button type="button" class="btn text-white bg-success ml-2"><i class="fa fa-hand-pointer-o"></i></button>

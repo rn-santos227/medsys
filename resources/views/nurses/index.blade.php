@@ -27,6 +27,7 @@
 
 
 @include('nurses.create')
+@include('nurses.update')
 @include('nurses.fingerprint')
 @endsection
 
