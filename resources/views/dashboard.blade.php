@@ -120,6 +120,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
+                                                @csrf
                                                 <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
                                                 <button type="button" id="{{ $dispenser->id }}" class="btn text-white bg-primary relay"><i class="fa fa-bell"></i></button>                                            
                                             </div>
@@ -143,7 +144,22 @@
     <script type="text/javascript">
         $('.relay').on('click', function(e) {
             e.preventDefault();
-            var id = this.id;
+            $.ajax({
+                type:"post",
+                url: '/dispensers/relay',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "id": this.id
+                },
+                success:function(res) {
+                    console.log(res);
+                },
+                error:function() {
+                }
+            });
         });
     </script>
 @endsection
@@ -153,7 +169,6 @@
         $(document).ready(function() {
             // Javascript method's body can be found in assets/js/demos.js
             demo.initDashboardPageCharts();
-
             demo.showNotification();
         });
     </script>
