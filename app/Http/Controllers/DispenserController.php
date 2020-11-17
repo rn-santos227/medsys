@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Dispenser;
 use App\Models\Medicine;
 
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use App\Http\Requests\DispenserRequest;
 use Illuminate\Http\Request;
 
@@ -54,8 +56,15 @@ class DispenserController extends Controller
     public function relay(Request $request) {
         $id = $request->id;
 
+        $process = new Process(['python', 'home/pi/test-relay.py']);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
         return response()->json([
-            'status' => 'okay',
+            'status' => $process->getOutput(),
         ]);
     }
 }
