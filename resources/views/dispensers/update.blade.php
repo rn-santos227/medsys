@@ -1,5 +1,5 @@
 @foreach ($dispensers as $dispenser)
-<div class="modal fade bd-example-modal-lg" id="update_{{ $dispenser->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true"  style="margin-top: -150px">
+<div class="modal fade bd-example-modal-lg" id="update_{{ $dispenser->id }}"  role="dialog" tabindex="-1" aria-hidden="true"  style="margin-top: -150px">
     <div class="modal-dialog modal-lg " role="document">
         <form action="/dispensers/update" method="POST">
             <div class="modal-content">
@@ -60,8 +60,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 @endforeach

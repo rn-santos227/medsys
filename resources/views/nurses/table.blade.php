@@ -18,10 +18,10 @@
                             <td>{{ $nurse->email }}</td>
                             <td>{{ $nurse->contact }}</td>
                             <td>
-                                <button type="button" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
-                                <button type="button" class="btn text-white bg-success ml-2"><i class="fa fa-hand-pointer-o"></i></button>
-                                <button type="button" class="btn text-white bg-warning ml-2"><i class="fa fa-pencil"></i></button>
-                                <button type="button" class="btn text-white bg-danger ml-2"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#view_{{ $nurse->id}}" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#fingerprint_{{ $nurse->id}}" class="btn text-white bg-success ml-2"><i class="fa fa-hand-pointer-o"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#update_{{ $nurse->id}}" class="btn text-white bg-warning ml-2 "><i class="fa fa-pencil"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#delete_{{ $nurse->id }}"  class="btn text-white bg-danger ml-2"><i class="fa fa-trash-o"></i></button>
                             </td>
                         </tr>
 

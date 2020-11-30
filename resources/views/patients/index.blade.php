@@ -25,6 +25,7 @@
     </div>
 </div>
 @include('patients.create')
+@include('patients.update')
 @endsection
 
 @push('scripts')
