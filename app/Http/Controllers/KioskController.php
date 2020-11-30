@@ -10,9 +10,9 @@ class KioskController extends Controller
 {
     public function index() {
         $dispensers = Dispenser::where('active', 1)->get();
-
+        $temp = shell_exec("python /home/pi/temp.py 2>&1");
         return view('kiosk.index', compact(
-            'dispensers'
+            'dispensers', 'temp'
         ));
     }
 }

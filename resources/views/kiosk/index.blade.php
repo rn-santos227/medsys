@@ -4,10 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card ">
+                <div class="card mt-4">
                     <div class="card-header ">
-                        <h4 class="card-title">Medicine Dispensers</h4>
-                        <p class="card-category">show medicine dispenser information.</p>
+                        <h4 class="card-title">{{ $temp }}</h4>
                     </div>
                     <div class="card-body ">
                         @foreach($dispensers as $dispenser)
