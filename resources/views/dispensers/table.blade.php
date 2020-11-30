@@ -20,7 +20,7 @@
                             <td>{{ $dispenser->capacity }}</td>
                             <td>{{ $dispenser->maintenance == 0 ? 'Yes' : 'No' }}</td>
                             <td>
-                            <button data-toggle="modal" data-target="#update_{{ $dispenser->id }}" type="button" class="btn text-white bg-success ml-2"><i class="fa fa-cog"></i></button>
+                            <button {{ $dispenser->maintenance == 0 ? '' : 'disabled' }} data-toggle="modal" data-target="#update_{{ $dispenser->id }}" type="button" class="btn text-white bg-success ml-2"><i class="fa fa-cog"></i></button>
                             <button data-toggle="modal" data-target="#maintenance_{{ $dispenser->id }}" type="button" class="btn text-white bg-warning ml-2"><i class="fa fa-wrench                                    "></i></button>
                             </td>
                         </tr>

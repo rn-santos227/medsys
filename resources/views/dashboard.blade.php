@@ -116,13 +116,13 @@
                                         <div class="row mt-2">
                                             <div class="col-md-9">
                                                 <div class="progress mt-2">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacitiy }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="{{ $dispenser->capacity }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 @csrf
                                                 <button type="button" class="btn text-white bg-success"><i class="fa fa-cog"></i></button>
-                                                <button type="button" id="{{ $dispenser->id }}" class="btn text-white bg-primary relay"><i class="fa fa-bell"></i></button>                                            
+                                                <button data-toggle="modal" data-target="#manual_{{ $dispenser->id}}" class="btn text-white bg-primary"><i class="fa fa-bell"></i></button>                                            
                                             </div>
                                         </div>           
                                     </div>
@@ -141,27 +141,8 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $('.relay').on('click', function(e) {
-            e.preventDefault();
-            $.ajax({
-                type:"post",
-                url: '/dispensers/relay',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    "id": this.id
-                },
-                success:function(res) {
-                    console.log(res);
-                },
-                error:function() {
-                }
-            });
-        });
-    </script>
+
+@include('manual')
 @endsection
 
 @push('js')

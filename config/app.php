@@ -167,6 +167,7 @@ return [
          */
         Yajra\DataTables\DataTablesServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Nexmo\Laravel\NexmoServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +232,7 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
     ],
 
 ];

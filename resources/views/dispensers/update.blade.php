@@ -52,8 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label for="txt_notes" class="col-form-label">Notes</label>
-                        <textarea class="form-control" name="notes" id="txt_notes" placeholder="Enter Notes here.">{{ $dispenser->notes }}
-                        </textarea>
+                        <textarea class="form-control" name="notes" id="txt_notes" placeholder="Enter Notes here.">{{ $dispenser->notes }}</textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

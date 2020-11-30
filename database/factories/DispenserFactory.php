@@ -25,9 +25,10 @@ class DispenserFactory extends Factory
         return [
             'ref_code' => "D" . str_pad($id, 7, "0", STR_PAD_LEFT),
             'name' => 'Unassigned Dispenser',
+            'quantity' => 100,
             'capacity' => 100,
             'critical' => 0,
-            'ceiling' => 0,
+            'ceiling' => 100,
             'active' => 1
         ];
     }

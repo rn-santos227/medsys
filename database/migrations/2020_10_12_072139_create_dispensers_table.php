@@ -19,6 +19,7 @@ class CreateDispensersTable extends Migration
             $table->integer('medicine_id')->nullable()->unsigned();
             $table->integer('gid')->nullable()->unsigned();
             $table->string('name');
+            $table->integer('quantity');
             $table->integer('capacity');
             $table->integer('critical');
             $table->integer('ceiling');

@@ -60,6 +60,12 @@ Tip 2: you can also add an image using data-image tag
                     <p>{{ __("Medicines") }}</p>
                 </a>
             </li>
+            <li class="nav-item @if($activePage == 'accounts') active @endif">
+                <a class="nav-link" href="{{route('accounts')}}">
+                    <i class="nc-icon nc-single-02"></i>
+                    <p>{{ __("Accounts") }}</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

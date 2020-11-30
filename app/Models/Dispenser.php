@@ -17,6 +17,7 @@ class Dispenser extends Model
         'ref_code',
         'name',
         'medicine_id',
+        'quantity',
         'capacity',
         'ceiling',
         'critical',

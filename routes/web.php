@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/kiosk', 'App\Http\Controllers\KioskController@index')->name('kiosk');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('dashboard');
 
 Route::get('/schedule', 'App\Http\Controllers\ScheduleController@index')->name('schedule');
@@ -59,8 +60,9 @@ Route::post('/medicines/create', 'App\Http\Controllers\MedicineController@create
 Route::post('/medicines/update', 'App\Http\Controllers\MedicineController@update')->name('medicines_update');
 Route::post('/medicines/delete', 'App\Http\Controllers\MedicineController@delete')->name('medicines_delete');
 
+Route::get('/users', 'App\Http\Controllers\UserController@index')->name('accounts');
+
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::patch('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::patch('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
