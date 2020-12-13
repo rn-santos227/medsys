@@ -39,6 +39,7 @@ class DispenserController extends Controller
             'name' => $request->name,
             'medicine_id' => $request->medicine_id, 
             'capacity' => $request->capacity,
+            'quantity' => $request->quantity,
             'ceiling' => $request->ceiling,
             'critical' => $request->critical,
             'notes' => $request->notes
