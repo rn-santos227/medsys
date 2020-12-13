@@ -52,6 +52,13 @@ class DispenserController extends Controller
         return view('dispensers.index', compact('dispensers', 'medicines'));
     }
 
+    public function door() {
+        shell_exec("python /home/pi/door-relay.py 2>&1");
+        return response()->json([
+            'status' => 'okay',
+        ]);
+    }
+
     public function relay(Request $request) {
         $user = Auth::user();
         $id = $request->id;

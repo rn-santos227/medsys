@@ -152,6 +152,28 @@
 @include('manual')
 @endsection
 
+<script type="text/javascript">
+    $('.relay').on('click', function(e) {
+        e.preventDefault();
+        $.ajax({
+            type:"get",
+            url: '/dispensers/door',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "id": this.id
+            },
+            success:function(res) {
+                console.log(res);
+            },
+            error:function() {
+            }
+        });
+    });
+</script>
+
 @push('js')
     <script type="text/javascript">
         $(document).ready(function() {

@@ -35,6 +35,7 @@ Route::get('/dispensers', 'App\Http\Controllers\DispenserController@index')->nam
 Route::post('/dispensers/update', 'App\Http\Controllers\DispenserController@update')->name('dispensers_update');
 Route::post('/dispensers/maintenance', 'App\Http\Controllers\DispenserController@maintenance')->name('dispensers_maintenance');
 Route::post('/dispensers/relay', 'App\Http\Controllers\DispenserController@relay')->name('dispenser_relay');
+Route::post('/dispensers/door', 'App\Http\Controllers\DispenserController@door')->name('dispenser_door');
 
 
 Route::get('/records', 'App\Http\Controllers\PatientRecordController@index')->name('records');
