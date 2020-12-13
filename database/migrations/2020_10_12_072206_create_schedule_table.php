@@ -20,6 +20,8 @@ class CreateScheduleTable extends Migration
             $table->string('days');
             $table->time('schedule');
             $table->text("notes")->nullable();
+            $table->integer('sent_count');
+            $table->tinyInteger('answered');
             $table->tinyInteger('active');
             $table->timestamps();
         });

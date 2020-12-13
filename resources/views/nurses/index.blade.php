@@ -28,7 +28,9 @@
 
 @include('nurses.create')
 @include('nurses.update')
+@include('nurses.view')
 @include('nurses.fingerprint')
+@include('nurses.delete')
 @endsection
 
 @push('scripts')

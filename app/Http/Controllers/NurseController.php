@@ -50,6 +50,10 @@ class NurseController extends Controller
     }
 
     public function biometric(NurseRequest $request) {
+       
+    }
+
+    public function update(Request $request) {
         $validated = $request->validated();
         $nurse = Nurse::findOrFail($request->id);
 
@@ -65,14 +69,18 @@ class NurseController extends Controller
 
         $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
         $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        return view('nurses.index', compact('nurses', 'medicines'));        
-    }
-
-    public function update(Request $request) {
-
+        return view('nurses.index', compact('nurses', 'medicines')); 
     }
 
     public function delete(Request $request) {
+        $nurse = Patient::findOrFail($request->id);
+        $nurse->update([
+            'active' => 0
+        ]);
 
+        
+        $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('nurses.index', compact('nurses', 'medicines'));   
     }
 }

@@ -26,6 +26,9 @@
 </div>
 
 @include('schedule.create')
+@include('schedule.view')
+@include('schedule.update')
+@include('schedule.delete')
 @endsection
 
 @push('scripts')

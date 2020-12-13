@@ -25,6 +25,7 @@
         </div>
     </div>
 </div>  
+@endforeach
 
 <script type="text/javascript">
     $('.relay').on('click', function(e) {
@@ -47,4 +48,3 @@
         });
     });
 </script>
-@endforeach

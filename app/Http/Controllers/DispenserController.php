@@ -7,6 +7,7 @@ use App\Models\Medicine;
 
 use App\Http\Requests\DispenserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DispenserController extends Controller
 {
@@ -52,9 +53,20 @@ class DispenserController extends Controller
     }
 
     public function relay(Request $request) {
+        $user = Auth::user();
         $id = $request->id;
 
-        shell_exec("python /home/pi/test-relay.py 2>&1");
+        if(Hash::make($request->password) == $user->password) {
+            $dispenser = Dispenser::findOrFail($request->id);
+            $cap = $dispenser->capacity;
+            if($cap > 0) {
+                shell_exec("python /home/pi/test-relay".$request->id.".py 2>&1");
+                $dispenser->update([
+                    'capacity' => $cap - 1,
+                    'answered' => 1
+                ]);
+            }
+        }
 
         return response()->json([
             'status' => 'okay',

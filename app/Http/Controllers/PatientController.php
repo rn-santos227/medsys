@@ -58,7 +58,6 @@ class PatientController extends Controller
             'home_address' => $request->home_address,
             'notes' => $request->notes,
             'priority' => $request->priority,
-            'active' => $request->active
         ]);
 
         $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
@@ -66,6 +65,11 @@ class PatientController extends Controller
     }
 
     public function delete(Request $request) {
-
+        $patient = Patient::findOrFail($request->id);
+        $patient->update([
+            'active' => 0
+        ]);
+        $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('patients.index', compact('patients'));
     }
 }

@@ -26,6 +26,8 @@
 </div>
 @include('medicines.create')
 @include('medicines.update')
+@include('medicines.view')
+@include('medicines.delete')
 @endsection
 
 @push('scripts')

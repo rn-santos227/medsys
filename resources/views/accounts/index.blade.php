@@ -27,7 +27,8 @@
 
 
 @include('accounts.create')
-@include('accounts.view')
+@include('accounts.view')\
+@include('accounts.delete')
 @endsection
 
 @push('scripts')

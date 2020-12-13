@@ -45,10 +45,28 @@ class MedicineController extends Controller
     }
 
     public function update(Request $request) {
+        $validated = $request->validated();
+        $medicine = Medicine::findOrFail($request->id);
 
+        $medicine->update([
+            'name' => $request->name, 
+            'generic_name' => $request->generic_name,
+            'brand' => $request->brand,
+            'measurement' => $request->measurement,
+            'expiration' => $request->expiration,
+        ]);
+
+        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('medicines.index', compact('medicines', 'medicines')); 
     }
 
     public function delete(Request $request) {
+        $medicine = Medicine::findOrFail($request->id);
+        $medicine->update([
+            'active' => 0
+        ]);
 
+        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
+        return view('medicines.index', compact('medicines', 'medicines')); 
     }
 }

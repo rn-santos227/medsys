@@ -10,7 +10,7 @@
                 </div>
                 <div class="modal-body">
                     {{ HTML::ul($errors->all()) }}
-                    {{ Form::open(array('url' => 'assignments')) }}
+                    {{ Form::open(array('url' => 'schedule')) }}
                     <div class="form-group">
                         <label for="cbo_assignments">Task</label>
                         <select class="form-control" name="task_id" id="cbo_assignments">
@@ -19,7 +19,6 @@
                             @endforeach
                           </select>
                     </div>
-
 
                     <div class="panel panel-default">
                         <div class="panel-heading">Days</div>

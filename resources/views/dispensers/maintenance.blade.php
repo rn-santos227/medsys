@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body">
                     @csrf
-                    <input type="hidden" class="form-control" name="id" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->id }}">
+                    <input type="hidden" class="form-control" name="id" id="txt_name" value="{{ $dispenser->id }}">
                     <div class="form-group">
                         <label for="toggle_maintenance">Maintenance Mode: </label>
                         <input name="maintenance" {{ $dispenser->maintenance == 0 ? 'checked' : '' }} type="checkbox" id="toggle_maintenance" data-toggle="toggle">
@@ -21,8 +21,8 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 @endforeach

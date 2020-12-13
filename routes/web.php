@@ -31,7 +31,6 @@ Route::post('/schedule/create', 'App\Http\Controllers\ScheduleController@create'
 Route::post('/schedule/update', 'App\Http\Controllers\ScheduleController@update')->name('schedule_update');
 Route::post('/schedule/delete', 'App\Http\Controllers\ScheduleController@delete')->name('schedule_delete');
 
-
 Route::get('/dispensers', 'App\Http\Controllers\DispenserController@index')->name('dispensers');
 Route::post('/dispensers/update', 'App\Http\Controllers\DispenserController@update')->name('dispensers_update');
 Route::post('/dispensers/maintenance', 'App\Http\Controllers\DispenserController@maintenance')->name('dispensers_maintenance');
@@ -61,6 +60,9 @@ Route::post('/medicines/update', 'App\Http\Controllers\MedicineController@update
 Route::post('/medicines/delete', 'App\Http\Controllers\MedicineController@delete')->name('medicines_delete');
 
 Route::get('/users', 'App\Http\Controllers\UserController@index')->name('accounts');
+Route::post('/users', 'App\Http\Controllers\UserController@create')->name('accounts_create');
+Route::post('/users', 'App\Http\Controllers\UserController@update')->name('accounts_update');
+Route::post('/users', 'App\Http\Controllers\UserController@delete')->name('accounts_delete');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);

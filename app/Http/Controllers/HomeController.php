@@ -32,7 +32,7 @@ class HomeController extends Controller
         $nurse_count = Nurse::where('active', 1)->count();
         $medicine_count = Medicine::where('active', 1)->count();      
         $patient_count = Patient::where('active', 1)->count();
-        $schedule_count = PatientRecord::where('active', 1)->count();
+        $schedule_count = Schedule::where('active', 1)->count();
         $assignment_count = TaskAssignment::where('active', 1)->count();
 
         return view('dashboard', compact(

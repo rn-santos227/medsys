@@ -17,7 +17,6 @@
                             <td>{{ $user->email }}</td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#view_{{ $user->id}}" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
-                                <button type="button" data-toggle="modal" data-target="#update_{{ $user->id}}" class="btn text-white bg-warning ml-2 "><i class="fa fa-pencil"></i></button>
                                 <button type="button" data-toggle="modal" data-target="#delete_{{ $user->id }}"  class="btn text-white bg-danger ml-2"><i class="fa fa-trash-o"></i></button>
                             </td>
                         </tr>

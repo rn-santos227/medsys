@@ -18,6 +18,8 @@ class Schedule extends Model
         'days',
         'schedule',
         'notes',
+        'answered',
+        'sent_count',
         'active'
     ];
 
@@ -32,16 +34,16 @@ class Schedule extends Model
 
         foreach($days as $day) {
             switch(intval($day)) {
-                case 0: $days_word = $days_word . "Monday "; break;
-                case 1: $days_word = $days_word . "Tueday "; break;
-                case 2: $days_word = $days_word . "Wednesday "; break;
-                case 3: $days_word = $days_word . "Thursday "; break;
-                case 4: $days_word = $days_word . "Friday "; break;
-                case 5: $days_word = $days_word . "Saturday "; break;
-                case 6: $days_word = $days_word . "Sunday "; break;
+                case 0: $days_word = $days_word . "Sunday "; break;
+                case 1: $days_word = $days_word . "Monday "; break;
+                case 2: $days_word = $days_word . "Tuesday "; break;
+                case 3: $days_word = $days_word . "Wednesday "; break;
+                case 4: $days_word = $days_word . "Thursday "; break;
+                case 5: $days_word = $days_word . "Friday "; break;
+                case 6: $days_word = $days_word . "Saturday "; break;
             }
         }
 
-        return $days_word . " Time: " . $this->schedule;
+        return $days_word;
     }
 }

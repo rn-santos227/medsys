@@ -25,7 +25,7 @@
                         <label for="cbo_medicines">Medicine Name</label>
                         <select class="form-control" name="medicine_id" id="cbo_medicines" placeholder="Enter medicine name.">
                             @foreach($medicines as $medicine)
-                        <option {{ $dispenser->medicine_id == $medicine->id ? 'select' : '' }} value="{{ $medicine->id }}">{{ $medicine->name }}</option>
+                                <option {{ $dispenser->medicine_id == $medicine->id ? 'select' : '' }} value="{{ $medicine->id }}">{{ $medicine->name }}</option>
                             @endforeach
                           </select>
                     </div>

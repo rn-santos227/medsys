@@ -53,7 +53,7 @@
         </div>
        
 
-
+o
     </body>
     <!--   Core JS Files   -->
     <script src="{{ asset('light-bootstrap/js/core/jquery.3.2.1.min.js') }}" type="text/javascript"></script>

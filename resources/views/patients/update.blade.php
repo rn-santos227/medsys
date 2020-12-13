@@ -4,7 +4,7 @@
         <form action="/patients/create" method="POST">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fa fa-user-md"></i>&nbsp; Register Patient</h5>
+                <h5 class="modal-title"><i class="fa fa-user-md"></i>&nbsp; Update Patient ID - {{ $patient->ref_code }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

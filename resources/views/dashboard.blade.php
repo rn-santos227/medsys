@@ -104,8 +104,15 @@
                 <div class="col-md-8">
                     <div class="card ">
                         <div class="card-header ">
-                            <h4 class="card-title">Medicine Dispensers</h4>
-                            <p class="card-category">show medicine dispenser information.</p>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4 class="card-title">Medicine Dispensers</h4>
+                                    <p class="card-category">show medicine dispenser information.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-warning ml-4"><i class="fa fa-unlock"></i> Unlock Dispenser Door</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body ">
                             @foreach($dispensers as $dispenser)

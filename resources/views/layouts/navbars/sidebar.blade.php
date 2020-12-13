@@ -30,12 +30,12 @@ Tip 2: you can also add an image using data-image tag
                     <p>{{ __("Dispensers") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'records') active @endif">
+            {{-- <li class="nav-item @if($activePage == 'records') active @endif">
                 <a class="nav-link" href="{{route('records')}}">
                     <i class="nc-icon nc-paper-2"></i>
                     <p>{{ __("Records") }}</p>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item @if($activePage == 'assignments') active @endif">
                 <a class="nav-link" href="{{route('assignments')}}">
                     <i class="nc-icon nc-bell-55"></i>

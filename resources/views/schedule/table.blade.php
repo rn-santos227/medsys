@@ -9,6 +9,7 @@
                         <th>Assigned Nurse</th>
                         <th>Patient</th>
                         <th>Schedule</th>
+                        <th>Time</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
@@ -19,10 +20,11 @@
                             <td>{{ $schedule->getTask()->getNurseName() }}</td>
                             <td>{{ $schedule->getTask()->getPatientName() }}</td>
                             <td>{{ $schedule->getSchedule() }}</td>
+                            <td>{{ $schedule->schedule }}</td>
                             <td>
                                 <button type="button" data-toggle="modal" data-target="#view_{{ $schedule->id}}" class="btn text-white bg-primary ml-2"><i class="fa fa-search"></i></button>
-                                <button type="button" data-toggle="modal" data-target="#view_{{ $schedule->id}}" class="btn text-white bg-warning ml-2"><i class="fa fa-pencil"></i></button>
-                                <button type="button" data-toggle="modal" data-target="#view_{{ $schedule->id}}" class="btn text-white bg-danger ml-2"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#update_{{ $schedule->id}}" class="btn text-white bg-warning ml-2"><i class="fa fa-pencil"></i></button>
+                                <button type="button" data-toggle="modal" data-target="#delete_{{ $schedule->id}}" class="btn text-white bg-danger ml-2"><i class="fa fa-trash-o"></i></button>
                             </td>
                         </tr>
 

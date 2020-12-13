@@ -26,6 +26,8 @@
 </div>
 @include('assignments.create')
 @include('assignments.update')
+@include('assignments.view')
+@include('assignments.delete')
 @endsection
 
 @push('scripts')
