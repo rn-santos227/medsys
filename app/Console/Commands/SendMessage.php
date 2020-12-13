@@ -47,20 +47,24 @@ class SendMessage extends Command
             ['active', 1]
         ])->get();
 
-        $current_time = Carbon::parse(Carbon::now())->format('h:i:s');
+        $current_time = Carbon::parse(Carbon::now())->format('H:i:s');
 
         $parsed = date_parse($current_time);
         $current_seconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
 
-        
+        echo $current_seconds;
         foreach($schedules as $schedule) {
             $parsed = date_parse(Carbon::parse($schedule->schedule));
-            
+        
             $scheduled_seconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+           
+        
+            echo $scheduled_seconds . ' ';
             if($current_seconds >= $scheduled_seconds && $current_seconds <= $scheduled_seconds+3600) {
+              
                 Nexmo::message()->send([
                     'to'   => $schedule->getTask()->getNurseContact(),
-                    'from' => 'Vonage APIs',
+                    'from' => 'Medicine System',
                     'text' => 'Patient: '. $schedule->getTask()->getPatientName() .' scheduled for medicine, please proceed to the dispenser '.  $schedule->getTask()->getDispenserName().'.'
                 ]);
                 $sent_count = $schedule->sent_count;
@@ -69,7 +73,8 @@ class SendMessage extends Command
                 ]);
             } else {
                 $schedule->update([
-                    'answered' => 0
+                    'answered' => 0,
+                    'sent_count' => 0
                 ]);
             }
         }
