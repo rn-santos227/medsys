@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dispenser;
+use App\Models\Log;
 use App\Models\Medicine;
+use App\Models\Nurse;
+use App\Models\Patient;
+use App\Models\PatientRecord;
+use App\Models\Schedule;
+use App\Models\TaskAssignment;
+
 
 use App\Http\Requests\DispenserRequest;
 use Illuminate\Http\Request;
@@ -63,18 +70,28 @@ class DispenserController extends Controller
         $user = Auth::user();
         $id = $request->id;
 
-        $dispenser = Dispenser::findOrFail($request->id);
-        $quantity = $dispenser->quantity;
-        if($quantity > 0) {
-            shell_exec("python /home/pi/test-relay".$id.".py 2>&1");
-            $dispenser->update([
-                'quantity' => $quantity - 1,
-                'answered' => 1
-            ]);
+        if(Hash::make($request->password) == $user->password) {
+            $dispenser = Dispenser::findOrFail($request->id);
+            $quantity = $dispenser->quantity;
+            if($quantity > 0) {
+                shell_exec("python /home/pi/test-relay".$id.".py 2>&1");
+                $dispenser->update([
+                    'quantity' => $quantity - 1,
+                    'answered' => 1
+                ]);
+            }
         }
 
-        return response()->json([
-            'status' => 'okay',
-        ]);
+        $dispensers = Dispenser::where('active', 1)->get();
+
+        $nurse_count = Nurse::where('active', 1)->count();
+        $medicine_count = Medicine::where('active', 1)->count();      
+        $patient_count = Patient::where('active', 1)->count();
+        $schedule_count = Schedule::where('active', 1)->count();
+        $assignment_count = TaskAssignment::where('active', 1)->count();
+
+        return view('dashboard', compact(
+            'dispensers', 'nurse_count', 'medicine_count', 'patient_count', 'schedule_count', 'assignment_count'
+        ));
     }
 }

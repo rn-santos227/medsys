@@ -1,7 +1,7 @@
 @foreach ($dispensers as $dispenser)
 <div class="modal fade" id="manual_{{ $dispenser->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true">
     <div class="modal-dialog " role="document">
-        <form action="/dispensers/maintenance" method="POST">
+        <form action="/dispensers/relay" method="POST">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><i class="fa fa-cog"></i>&nbsp; Dispenser Manual Activation</h5>
