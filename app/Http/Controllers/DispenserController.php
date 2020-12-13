@@ -70,17 +70,15 @@ class DispenserController extends Controller
     public function relay(Request $request) {
         $user = Auth::user();
         $id = $request->id;
-
-        if(Hash::make($request->password) == $user->password) {
-            $dispenser = Dispenser::findOrFail($request->id);
-            $quantity = $dispenser->quantity;
-            if($quantity > 0) {
-                shell_exec("python /home/pi/test-relay".$id.".py 2>&1");
-                $dispenser->update([
-                    'quantity' => $quantity - 1,
-                    'answered' => 1
-                ]);
-            }
+        
+        $dispenser = Dispenser::findOrFail($request->id);
+        $quantity = $dispenser->quantity;
+        if($quantity > 0) {
+            shell_exec("python /home/pi/test-relay".$id.".py 2>&1");
+            $dispenser->update([
+                'quantity' => $quantity - 1,
+                'answered' => 1
+            ]);
         }
 
         $dispensers = Dispenser::where('active', 1)->get();
