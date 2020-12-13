@@ -11,6 +11,7 @@ use App\Models\PatientRecord;
 use App\Models\Schedule;
 use App\Models\TaskAssignment;
 
+use Auth;
 
 use App\Http\Requests\DispenserRequest;
 use Illuminate\Http\Request;
