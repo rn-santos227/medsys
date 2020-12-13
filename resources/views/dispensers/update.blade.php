@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label for="txt_name">Quantity</label>
                         <input type="text" class="form-control" 
-                    name="capacity" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->capacity }}">
+                    name="capacity" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->quantity }}">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
