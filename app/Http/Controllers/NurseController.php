@@ -10,11 +10,13 @@ use Illuminate\Http\Request;
 
 class NurseController extends Controller
 {
+    //check if user is authenticated
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    //load nurse page
     public function index()
     {
         $nurses = Nurse::where('active', 1)->get();
@@ -23,6 +25,7 @@ class NurseController extends Controller
         ));
     }
 
+    //create new nurse record
     public function create(NurseRequest $request) {
         $validated = $request->validated();
 
@@ -53,6 +56,7 @@ class NurseController extends Controller
        
     }
 
+    //update nurse record.
     public function update(Request $request) {
         $validated = $request->validated();
         $nurse = Nurse::findOrFail($request->id);
@@ -72,13 +76,13 @@ class NurseController extends Controller
         return view('nurses.index', compact('nurses', 'medicines')); 
     }
 
+    //delete nurse record.
     public function delete(Request $request) {
         $nurse = Patient::findOrFail($request->id);
         $nurse->update([
             'active' => 0
         ]);
-
-        
+   
         $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
         $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('nurses.index', compact('nurses', 'medicines'));   

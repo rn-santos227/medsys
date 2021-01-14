@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Patient extends Model
 {
     use HasFactory;
+
+    //Indicates table patients
     protected $table = 'patients';
+
+    //Fillable fields for patients
     protected $fillable = [
         'ref_code',
         'first_name',
@@ -22,15 +26,19 @@ class Patient extends Model
         'active'
     ];
 
+    //capitalized first letter of first name
     public function setFirstNameAttribute($value) {
         $this->attributes['first_name'] = ucfirst(strtolower($value));
     }
 
+    //capitalized first letter of middle name
     public function setMiddleNameAttribute($value) {
         $this->attributes['middle_name'] = ucfirst(strtolower($value));
     }
 
+    //capitalized first letter of last name
     public function setLastNameAttribute($value) {
         $this->attributes['last_name'] = ucfirst(strtolower($value));
     }
 }
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//imports all models
 use App\Models\Dispenser;
 use App\Models\Log;
 use App\Models\Medicine;
@@ -19,11 +20,13 @@ use Illuminate\Support\Facades\Hash;
 
 class DispenserController extends Controller
 {
+    //checks the user if authenticated to use the controller.
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    //loads the dispenser
     public function index()
     {
         $dispensers = Dispenser::where('active', 1)->orderBy('created_at', 'DESC')->get();
@@ -31,11 +34,12 @@ class DispenserController extends Controller
         return view('dispensers.index', compact('dispensers', 'medicines'));
     }
 
+    //update changes for selected dispenser.
     public function update(DispenserRequest $request) {
-        $validated = $request->validated();
-        $dispenser = Dispenser::findOrFail($request->id);
+        $validated = $request->validated(); //validate if all required fields are filled.
+        $dispenser = Dispenser::findOrFail($request->id); //check the dispenser if exists.
 
-        $dispenser->update([
+        $dispenser->update([ //updates the fillable value of the dispenser.
             'name' => $request->name,
             'medicine_id' => $request->medicine_id, 
             'capacity' => $request->capacity,
@@ -50,6 +54,7 @@ class DispenserController extends Controller
         return view('dispensers.index', compact('dispensers', 'medicines'));
     }
 
+    //toggle maintenance mode of dispenser
     public function maintenance(Request $request) {
         $dispenser = Dispenser::findOrFail($request->id);
         $dispenser->update([
@@ -61,13 +66,16 @@ class DispenserController extends Controller
         return view('dispensers.index', compact('dispensers', 'medicines'));
     }
 
+    //unlocks the dispenser's door.
     public function door() {
+        //run python code that unlocks the dispenser door.
         shell_exec("python /home/pi/door-relay.py 2>&1");
         return response()->json([
             'status' => 'okay',
         ]);
     }
 
+    //recieves relay either manually or through fingerprint.
     public function relay(Request $request) {
         $user = Auth::user();
         $id = $request->id;
@@ -75,6 +83,7 @@ class DispenserController extends Controller
         $dispenser = Dispenser::findOrFail($request->id);
         $quantity = $dispenser->quantity;
         if($quantity > 0) {
+            //if quantity is more than 1 then it will run the corresponding relay.
             shell_exec("python /home/pi/test-relay".$id.".py 2>&1");
             $dispenser->update([
                 'quantity' => $quantity - 1,

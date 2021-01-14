@@ -9,17 +9,20 @@ use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
+    //check user is authenticated
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    //load patient page.
     public function index()
     {
         $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('patients.index', compact('patients'));
     }
 
+    //create new patient record.
     public function create(PatientRequest $request) {
         $validated = $request->validated();
         $id = Patient::count() + 1;
@@ -45,6 +48,7 @@ class PatientController extends Controller
         ));
     }
 
+    //updates a patient record.
     public function update(Request $request) {
         $validated = $request->validated();
         $patient = Patient::findOrFail($request->id);
@@ -64,6 +68,7 @@ class PatientController extends Controller
         return view('patients.index', compact('patients'));
     }
 
+    //delets a patient record.
     public function delete(Request $request) {
         $patient = Patient::findOrFail($request->id);
         $patient->update([
@@ -73,3 +78,5 @@ class PatientController extends Controller
         return view('patients.index', compact('patients'));
     }
 }
+
+

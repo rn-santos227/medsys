@@ -15,6 +15,7 @@ class ScheduleController extends Controller
         $this->middleware('auth');
     }
 
+    //load schedule page
     public function index()
     {
         $assignments = TaskAssignment::where('active', 1)->orderBy('created_at', 'DESC')->get();
@@ -22,8 +23,10 @@ class ScheduleController extends Controller
         return view('schedule.index', compact('schedules', 'assignments'));
     }
 
+    //create new schedule
     public function create(ScheduleRequest $request) {
         $validated = $request->validated();
+        //convert selected days to string numbers
         $days = 
         ($request->has('sun') ? '0' : '') . 
         ($request->has('mon') ? '1' : '') .
@@ -33,7 +36,7 @@ class ScheduleController extends Controller
         ($request->has('fri') ? '5' : '') . 
         ($request->has('sat') ? '6' : '');
 
-        $id = Schedule::count() + 1;
+        $id = Schedule::count() + 1; //create new id number by adding one to last id.
         $schedule = Schedule::firstOrCreate([
             'task_id' => $request->task_id, 
             'schedule' => $request->schedule
@@ -53,6 +56,7 @@ class ScheduleController extends Controller
         return view('schedule.index', compact('schedules', 'assignments'));
     }
 
+    //update a schedule
     public function update(ScheduleRequest $request) {
         $validated = $request->validated();
         $days = 
@@ -79,6 +83,7 @@ class ScheduleController extends Controller
         return view('schedule.index', compact('schedules', 'assignments'));
     }
 
+    //delete a schedule
     public function delete(Request $request) {
         $schedules = Schedule::findOrFail($request->id);
         $schedules->update([

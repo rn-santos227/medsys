@@ -53,6 +53,7 @@ class User extends Authenticatable
         $this->attributes['last_name'] = ucfirst(strtolower($value));
     }
 
+    //encrypt password with hash
     public function setPasswordAttribute($value) {
         $this->attributes['password'] = Hash::make($value);
     }

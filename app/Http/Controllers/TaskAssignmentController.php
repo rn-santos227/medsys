@@ -18,13 +18,14 @@ class TaskAssignmentController extends Controller
         $this->middleware('auth');
     }
 
+    //load task page.
     public function index()
     {
         $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
         $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
         $dispensers = Dispenser::where([
             ['active', 1],
-            ['maintenance', 1]
+            ['maintenance', 0]
         ])->orderBy('created_at', 'DESC')->get();
         $assignments = TaskAssignment::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('assignments.index', compact(
@@ -32,6 +33,7 @@ class TaskAssignmentController extends Controller
         ));
     }
 
+    //load create new task.
     public function create(TaskAssignmentRequest $request) {
         $validated = $request->validated();
         $id = TaskAssignment::count() + 1;
@@ -57,6 +59,7 @@ class TaskAssignmentController extends Controller
         ));
     }
 
+    //load create update task.
     public function update(TaskAssignmentRequest $request) {
         $validated = $request->validated();
         $assignment = TaskAssignment::findOrFail($request->id);
@@ -77,6 +80,7 @@ class TaskAssignmentController extends Controller
         ));
     }
 
+    //load create delete task.
     public function delete(Request $request) {
         $assignment = TaskAssignment::findOrFail($request->id);
         $assignment->update([

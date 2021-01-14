@@ -26,6 +26,7 @@ class Dispenser extends Model
         'active'
     ];
 
+    //Get the Medicine Name of the assigned Medecine ID
     public function getMedicineName() {
         if($this->medicine_id != 0) {
             $medicine = Medicine::where('id', $this->medicine_id)->first();

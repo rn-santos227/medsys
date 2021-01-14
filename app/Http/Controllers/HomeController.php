@@ -25,14 +25,20 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    //loads the dashboard
     public function index()
     {
+        //get all available dispensers.
         $dispensers = Dispenser::where('active', 1)->get();
-
+        //get the total number of active nurses.
         $nurse_count = Nurse::where('active', 1)->count();
-        $medicine_count = Medicine::where('active', 1)->count();      
+        //get the total number of active medicines.
+        $medicine_count = Medicine::where('active', 1)->count();   
+        //get the total number of active patients.   
         $patient_count = Patient::where('active', 1)->count();
+         //get the total number of active schedules.
         $schedule_count = Schedule::where('active', 1)->count();
+        //get the total number of active task assignments.
         $assignment_count = TaskAssignment::where('active', 1)->count();
 
         return view('dashboard', compact(
@@ -40,3 +46,6 @@ class HomeController extends Controller
         ));
     }
 }
+
+
+

@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Medicine extends Model
 {
     use HasFactory;
+
+    //indicates belongs to medcine table.
     protected $table = 'medicines';
 
+    //fillable fields.
     protected $fillable = [
         'ref_code',
         'name',
