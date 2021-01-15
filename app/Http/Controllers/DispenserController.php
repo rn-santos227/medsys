@@ -70,9 +70,17 @@ class DispenserController extends Controller
     public function door() {
         //run python code that unlocks the dispenser door.
         shell_exec("python /home/pi/door-relay.py 2>&1");
-        $dispensers = Dispenser::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        return view('dispensers.index', compact('dispensers', 'medicines'));
+        $dispensers = Dispenser::where('active', 1)->get();
+
+        $nurse_count = Nurse::where('active', 1)->count();
+        $medicine_count = Medicine::where('active', 1)->count();      
+        $patient_count = Patient::where('active', 1)->count();
+        $schedule_count = Schedule::where('active', 1)->count();
+        $assignment_count = TaskAssignment::where('active', 1)->count();
+
+        return view('dashboard', compact(
+            'dispensers', 'nurse_count', 'medicine_count', 'patient_count', 'schedule_count', 'assignment_count'
+        ));
     }
 
     //recieves relay either manually or through fingerprint.
