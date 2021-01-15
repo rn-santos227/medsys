@@ -152,7 +152,7 @@
 @endsection
 
 <script type="text/javascript">
-    $('.door').on('click', function(e) {
+    $('#door').on('click', function(e) {
         e.preventDefault();
         $.ajax({
             type:"get",
