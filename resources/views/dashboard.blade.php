@@ -110,7 +110,10 @@
                                     <p class="card-category">show medicine dispenser information.</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <button id="door" type="button" class="door btn btn-warning ml-4"><i class="fa fa-unlock"></i> Unlock Dispenser Door</button>
+                                    <form action="/dispensers/door" method="GET">
+                                        @csrf
+                                        <button type="submit" class="door btn btn-warning ml-4"><i class="fa fa-unlock"></i> Unlock Dispenser Door</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -151,23 +154,6 @@
 @include('manual')
 @endsection
 
-@section('script')
-<script type="text/javascript">
-    $('.door').on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-            type:"get",
-            url: '/dispensers/door',
-            success:function(res) {
-                console.log(res);
-            },
-            error:function(err) {
-                console.log(err);
-            }
-        });
-    });
-</script>
-@endsection
 @push('js')
     <script type="text/javascript">
         $(document).ready(function() {
