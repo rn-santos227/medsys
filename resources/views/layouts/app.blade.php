@@ -72,10 +72,9 @@ o
     <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
     <script src="{{ asset('light-bootstrap/js/demo.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ asset('scripts/es6-shim.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('scripts/websdk.client.bundle.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('scripts/fingerprint.sdk.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('scripts/fingerprint.sdk.min.js.map') }}" ></script>
+    <script src="{{ asset('js/es6-shim.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/websdk.client.bundle.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/fingerprint.sdk.min.js') }}" type="text/javascript"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
