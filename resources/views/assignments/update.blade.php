@@ -1,5 +1,5 @@
 @foreach ($assignments as $assignment)
-<div class="modal fade bd-example-modal-lg" id="update_{{ $assignment->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="update_{{ $assignment->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true"  style="margin-top: -150px">
     <div class="modal-dialog modal-lg " role="document">
         <form action="/assignments/update" method="POST">
             <div class="modal-content">

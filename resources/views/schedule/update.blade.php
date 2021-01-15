@@ -1,10 +1,10 @@
 @foreach ($schedules as $schedule)
-<div class="modal fade bd-example-modal-lg" id="update_{{ $schedule->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="update_{{ $schedule->id }}"  role="dialog" tabindex="-1" aria-labelledby="create_modal" aria-hidden="true" style="margin-top: -150px">
     <div class="modal-dialog modal-lg " role="document">
         <form action="/schedule/update" method="POST">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fa fa-user-md"></i>&nbsp; New Schedule</h5>
+                    <h5 class="modal-title"><i class="fa fa-user-md"></i>&nbsp; Update Schedule Record ID No. {{ $schedule->ref_code }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
