@@ -123,7 +123,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-10">
                                                 <div class="progress mt-2">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ ($dispenser->quantity / $dispenser->ceiling) * 100 }}%" aria-valuenow="{{ $dispenser->quantity }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
+                                                    <div class="progress-bar {{ $dispenser->quantity > $dispenser->critical ? 'bg-success' : 'bg-error' }}" role="progressbar" style="width: {{ ($dispenser->quantity / $dispenser->ceiling) * 100 }}%" aria-valuenow="{{ $dispenser->quantity }}" aria-valuemin="0" aria-valuemax="{{ $dispenser->ceiling }}"></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
