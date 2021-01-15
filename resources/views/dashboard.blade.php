@@ -110,7 +110,7 @@
                                     <p class="card-category">show medicine dispenser information.</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <button type="button" class="btn btn-warning ml-4"><i class="fa fa-unlock"></i> Unlock Dispenser Door</button>
+                                    <button id="door" type="button" class="btn btn-warning ml-4"><i class="fa fa-unlock"></i> Unlock Dispenser Door</button>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
 @endsection
 
 <script type="text/javascript">
-    $('.relay').on('click', function(e) {
+    $('.door').on('click', function(e) {
         e.preventDefault();
         $.ajax({
             type:"get",
