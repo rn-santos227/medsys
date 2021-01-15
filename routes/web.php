@@ -53,6 +53,7 @@ Route::post('/assignments/delete', 'App\Http\Controllers\TaskAssignmentControlle
 
 //URL links for creating, reading, updeting, deleting nurses.
 Route::get('/nurses', 'App\Http\Controllers\NurseController@index')->name('nurses');
+Route::post('/nurses/fingerprint', 'App\Http\Controllers\NurseController@biometric')->name('nurses_biometric');
 Route::post('/nurses/create', 'App\Http\Controllers\NurseController@create')->name('nurses_create');
 Route::post('/nurses/update', 'App\Http\Controllers\NurseController@update')->name('nurses_update');
 Route::post('/nurses/delete', 'App\Http\Controllers\NurseController@delete')->name('nurses_delete');
