@@ -158,13 +158,11 @@
         $.ajax({
             type:"get",
             url: '/dispensers/door',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
             success:function(res) {
                 console.log(res);
             },
-            error:function() {
+            error:function(err) {
+                console.log(err);
             }
         });
     });
