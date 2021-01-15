@@ -53,7 +53,11 @@ class NurseController extends Controller
     }
 
     public function biometric(NurseRequest $request) {
-       
+        shell_exec("python /usr/share/doc/python-fingerprint/examples/example_enroll.py 2>&1");
+        $nurses = Nurse::where('active', 1)->get();
+        return view('nurses.index', compact(
+            'nurses'
+        ));
     }
 
     //update nurse record.

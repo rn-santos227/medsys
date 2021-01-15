@@ -97,6 +97,12 @@ class DispenserController extends Controller
                 'quantity' => $quantity - 1,
                 'answered' => 1
             ]);
+
+            if($quantity <= 0) {
+                $dispenser->update([
+                    'maintenance' => 1
+                ]);     
+            }
         }
 
         $dispensers = Dispenser::where('active', 1)->get();
