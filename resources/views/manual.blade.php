@@ -27,6 +27,7 @@
 </div>  
 @endforeach
 
+@section('script')
 <script type="text/javascript">
     $('.relay').on('click', function(e) {
         e.preventDefault();
@@ -48,3 +49,4 @@
         });
     });
 </script>
+@endsection

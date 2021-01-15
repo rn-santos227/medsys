@@ -151,6 +151,7 @@
 @include('manual')
 @endsection
 
+@section('script')
 <script type="text/javascript">
     $('.door').on('click', function(e) {
         e.preventDefault();
@@ -172,7 +173,7 @@
         });
     });
 </script>
-
+@endsection
 @push('js')
     <script type="text/javascript">
         $(document).ready(function() {
