@@ -26,27 +26,3 @@
     </div>
 </div>  
 @endforeach
-
-@section('script')
-<script type="text/javascript">
-    $('.relay').on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-            type:"post",
-            url: '/dispensers/relay',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: {
-                "_token": "{{ csrf_token() }}",
-                "id": this.id
-            },
-            success:function(res) {
-                console.log(res);
-            },
-            error:function() {
-            }
-        });
-    });
-</script>
-@endsection
