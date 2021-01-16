@@ -76,8 +76,7 @@ class NurseController extends Controller
         ]);
 
         $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        return view('nurses.index', compact('nurses', 'medicines')); 
+        return view('nurses.index', compact('nurses')); 
     }
 
     //delete nurse record.
@@ -88,7 +87,6 @@ class NurseController extends Controller
         ]);
    
         $nurses = Nurse::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        $medicines = Medicine::where('active', 1)->orderBy('created_at', 'DESC')->get();
-        return view('nurses.index', compact('nurses', 'medicines'));   
+        return view('nurses.index', compact('nurses'));   
     }
 }
