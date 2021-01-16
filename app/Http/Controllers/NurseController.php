@@ -61,7 +61,7 @@ class NurseController extends Controller
     }
 
     //update nurse record.
-    public function update(Request $request) {
+    public function update(NurseRequest $request) {
         $validated = $request->validated();
         $nurse = Nurse::findOrFail($request->id);
 

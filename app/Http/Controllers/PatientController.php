@@ -49,7 +49,7 @@ class PatientController extends Controller
     }
 
     //updates a patient record.
-    public function update(Request $request) {
+    public function update(PatientRequest $request) {
         $validated = $request->validated();
         $patient = Patient::findOrFail($request->id);
 
