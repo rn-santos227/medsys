@@ -5,7 +5,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <th>Ref. Code</th>
-                        <th>Task ID</th>
+                        <th>Medicine</th>
                         <th>Assigned Nurse</th>
                         <th>Patient</th>
                         <th>Schedule</th>
@@ -16,7 +16,7 @@
                         @foreach ($schedules as $schedule)
                         <tr id="{{ $schedule->id }}">
                             <td>{{ $schedule->ref_code }}</td>
-                            <td>{{ $schedule->getTask()->ref_code }}</td>
+                            <td>{{ $schedule->getTask()->getDispenserMedicine() }}</td>
                             <td>{{ $schedule->getTask()->getNurseName() }}</td>
                             <td>{{ $schedule->getTask()->getPatientName() }}</td>
                             <td>{{ $schedule->getSchedule() }}</td>

@@ -40,7 +40,7 @@
                         </div>
                         <div class="card-footer pt-0">
                             <hr>
-                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Nurses registered.</div>
+                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Patients registered.</div>
                         </div>
                     </div>
                     <div class="card mb-3" style="background-color: #83eaff;">                     
@@ -59,7 +59,7 @@
                         </div>
                         <div class="card-footer pt-0">
                             <hr>
-                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Nurses registered.</div>
+                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Medecines registered.</div>
                         </div>
                     </div>
                     <div class="card mb-3" style="background-color: #83ff98;">                     
@@ -78,7 +78,7 @@
                         </div>
                         <div class="card-footer pt-0">
                             <hr>
-                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Nurses registered.</div>
+                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Schedules.</div>
                         </div>
                     </div>
                     <div class="card mb-3" style="background-color: #83ff98;">                     
@@ -97,7 +97,7 @@
                         </div>
                         <div class="card-footer pt-0">
                             <hr>
-                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Nurses registered.</div>
+                            <i class="fa fa-info-circle"></i><div class="stats" style="color: #000;">Number of Assignments.</div>
                         </div>
                     </div>
                 </div>
@@ -106,8 +106,8 @@
                         <div class="card-header ">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="card-title">Medicine Dispensers</h4>
-                                    <p class="card-category">show medicine dispenser information.</p>
+                                    <h4 class="card-title">Medicine Storages</h4>
+                                    <p class="card-category">show medicine storage information.</p>
                                 </div>
                                 <div class="col-md-4">
                                     <form action="/dispensers/door" method="GET">

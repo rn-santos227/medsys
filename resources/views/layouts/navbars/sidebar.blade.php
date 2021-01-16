@@ -27,7 +27,7 @@ Tip 2: you can also add an image using data-image tag
             <li class="nav-item @if($activePage == 'dispensers') active @endif">
                 <a class="nav-link" href="{{route('dispensers')}}">
                     <i class="nc-icon nc-settings-gear-64"></i>
-                    <p>{{ __("Dispensers") }}</p>
+                    <p>{{ __("Storages") }}</p>
                 </a>
             </li>
             {{-- <li class="nav-item @if($activePage == 'records') active @endif">

@@ -31,6 +31,11 @@ class TaskAssignment extends Model
         return $dispenser->name;
     }
 
+    public function getDispenserMedicine() {
+        $dispenser = Dispenser::where('id', $this->dispenser_id)->first();
+        return $dispenser->getMedicineName();
+    }
+
     //gets the patient name from patient model
     public function getPatientName() {
         $patient = Patient::where('id', $this->patient_id)->first();

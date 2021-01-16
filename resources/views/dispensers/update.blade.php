@@ -4,7 +4,7 @@
         <form action="/dispensers/update" method="POST">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fa fa-cog"></i>&nbsp; Configure Dispenser</h5>
+                    <h5 class="modal-title"><i class="fa fa-cog"></i>&nbsp; Configure Storage</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -17,7 +17,7 @@
                     name="id" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->id }}">
                     </div>
                     <div class="form-group">
-                        <label for="txt_name">Dispenser Name: </label>
+                        <label for="txt_name">Storage Name: </label>
                         <input type="text" class="form-control" 
                     name="name" id="txt_name" placeholder="Enter quantity of medicine in dispenser." value="{{ $dispenser->name }}">
                     </div>
