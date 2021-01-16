@@ -25,7 +25,7 @@ class TaskAssignmentController extends Controller
         $patients = Patient::where('active', 1)->orderBy('created_at', 'DESC')->get();
         $dispensers = Dispenser::where([
             ['active', 1],
-            ['maintenance', 0]
+            ['maintenance', 1]
         ])->orderBy('created_at', 'DESC')->get();
         $assignments = TaskAssignment::where('active', 1)->orderBy('created_at', 'DESC')->get();
         return view('assignments.index', compact(
